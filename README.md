@@ -33,7 +33,7 @@ placed, the agent's reasoning is cryptographically sealed (SHA-256 / RFC 8785), 
 and anchored daily to Bitcoin via OpenTimestamps — producing a tamper-evident audit trail that **anyone can
 verify offline, without trusting us.**
 
-→ Try the [live sandbox](https://irl.macropulse.live) (no signup) · read the [protocol spec](https://github.com/GabrielGauss/irl-public-docs).
+→ Try the [live sandbox](https://irl.macropulse.live) (no signup) · read the [protocol spec](https://github.com/macropulse-lab/irl-public-docs).
 
 ---
 
@@ -79,13 +79,13 @@ flowchart LR
 | Repo | What it is | Stack | Ships to |
 |------|-----------|-------|----------|
 | **[macropulse](https://github.com/GabrielGauss/macropulse)** 🔒 | Core: regime pipeline, REST API, dashboard, marketing site | Python / React | VPS · Vercel |
-| **[IRL-engine-AX](https://github.com/GabrielGauss/IRL-engine-AX)** | IRL Engine — pre-execution compliance gateway (public source) | Rust | self-host |
-| **[irl-public-docs](https://github.com/GabrielGauss/irl-public-docs)** | IRL protocol spec, whitepaper, integration & compliance guides | Markdown | — |
-| **[irl-sdk-python](https://github.com/GabrielGauss/irl-sdk-python)** | IRL client SDK for Python | Python | PyPI · `irl-sdk` |
-| **[irl-sdk-ts](https://github.com/GabrielGauss/irl-sdk-ts)** | IRL client SDK for TypeScript | TypeScript | npm · `irl-sdk` |
-| **[irl-verify](https://github.com/GabrielGauss/irl-verify)** | Offline proof-bundle verifier — frozen spec, MIT | Rust | crates.io |
-| **[irl-dashboard](https://github.com/GabrielGauss/irl-dashboard)** | Read-only compliance console for an IRL Engine | TypeScript | Vercel |
-| **[macropulse-mcp](https://github.com/GabrielGauss/macropulse-mcp)** | MCP server — the regime signal as native AI-agent tools | Python | PyPI · `macropulse-mcp` |
+| **[IRL-engine-AX](https://github.com/macropulse-lab/IRL-engine-AX)** | IRL Engine — pre-execution compliance gateway (public source) | Rust | self-host |
+| **[irl-public-docs](https://github.com/macropulse-lab/irl-public-docs)** | IRL protocol spec, whitepaper, integration & compliance guides | Markdown | — |
+| **[irl-sdk-python](https://github.com/macropulse-lab/irl-sdk-python)** | IRL client SDK for Python | Python | PyPI · `irl-sdk` |
+| **[irl-sdk-ts](https://github.com/macropulse-lab/irl-sdk-ts)** | IRL client SDK for TypeScript | TypeScript | npm · `irl-sdk` |
+| **[irl-verify](https://github.com/macropulse-lab/irl-verify)** | Offline proof-bundle verifier — frozen spec, MIT | Rust | crates.io |
+| **[irl-dashboard](https://github.com/macropulse-lab/irl-dashboard)** | Read-only compliance console for an IRL Engine | TypeScript | Vercel |
+| **[macropulse-mcp](https://github.com/macropulse-lab/macropulse-mcp)** | MCP server — the regime signal as native AI-agent tools | Python | PyPI · `macropulse-mcp` |
 
 🔒 = private source.
 
@@ -97,10 +97,10 @@ flowchart LR
 your AI assistant with `pip install macropulse-mcp`.
 
 **I want my trading agent to be auditable** → run the [sandbox](https://irl.macropulse.live), then self-host the
-[engine](https://github.com/GabrielGauss/IRL-engine-AX) and wrap your agent with `pip install irl-sdk`.
+[engine](https://github.com/macropulse-lab/IRL-engine-AX) and wrap your agent with `pip install irl-sdk`.
 
 **I need to verify someone's proof** → you never need an account. Clone
-[irl-verify](https://github.com/GabrielGauss/irl-verify) and check any proof bundle offline, or use the
+[irl-verify](https://github.com/macropulse-lab/irl-verify) and check any proof bundle offline, or use the
 in-browser [explorer](https://macropulse.live/proof).
 
 ---
