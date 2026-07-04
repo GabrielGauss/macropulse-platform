@@ -42,29 +42,34 @@ verify offline, without trusting us.**
 ```mermaid
 flowchart LR
     subgraph MP["MacroPulse — signal"]
-        PIPE["Daily pipeline<br/>XGBoost + HMM"] --> API["Regime API<br/>api.macropulse.live"]
-        API --> MTA["Signed regime<br/>(MTA · Ed25519)"]
+        PIPE["Daily pipeline: XGBoost + HMM"] --> API["Regime API"]
+        API --> MTA["Signed regime (Ed25519 MTA)"]
     end
 
     subgraph IRL["IRL Engine — compliance"]
-        MTA -.optional market-truth anchor.-> ENGINE["IRL Engine<br/>(self-hosted)"]
-        AGENT["Your AI agent"] --> ENGINE
-        ENGINE --> LEDGER["Bitemporal ledger<br/>+ daily Merkle root"]
-        LEDGER --> BTC["Bitcoin anchor<br/>(OpenTimestamps)"]
+        AGENT["Your AI agent"] --> ENGINE["IRL Engine (self-hosted)"]
+        ENGINE --> LEDGER["Bitemporal ledger + Merkle root"]
+        LEDGER --> BTC["Bitcoin anchor (OpenTimestamps)"]
     end
 
     subgraph CONSUME["Integrate & verify"]
-        API --> SDKPY["irl-sdk (Python)"]
-        API --> SDKTS["irl-sdk (TypeScript)"]
-        API --> MCP["macropulse-mcp<br/>(AI tools)"]
-        LEDGER --> BUNDLE["Proof bundle"]
-        BUNDLE --> VERIFY["irl-verify<br/>(offline, MIT)"]
-        LEDGER --> DASH["Compliance dashboard"]
+        SDKPY["irl-sdk Python"]
+        SDKTS["irl-sdk TypeScript"]
+        MCP["macropulse-mcp"]
+        VERIFY["irl-verify (offline, MIT)"]
+        DASH["Compliance dashboard"]
     end
 
-    style MP fill:#0a0a0a,stroke:#3fb85a,color:#fff
-    style IRL fill:#0a0a0a,stroke:#f5a623,color:#fff
-    style CONSUME fill:#0a0a0a,stroke:#4f46e5,color:#fff
+    MTA -->|"market-truth anchor"| ENGINE
+    API --> SDKPY
+    API --> SDKTS
+    API --> MCP
+    LEDGER --> VERIFY
+    LEDGER --> DASH
+
+    style MP fill:#0d1f14,stroke:#3fb85a,color:#fff
+    style IRL fill:#1f180a,stroke:#f5a623,color:#fff
+    style CONSUME fill:#12122b,stroke:#4f46e5,color:#fff
 ```
 
 ---
